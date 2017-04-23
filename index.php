@@ -1,6 +1,6 @@
 <?php 
 
-     require_once("./Constants.php");
+/*     require_once("./Constants.php");
 
      $constants = new Constants();
 
@@ -8,11 +8,11 @@
      $username = $constants::USER_NAME;
      $password = $constants::PASSWORD;
      $dbname = $constants::DB_NAME;
-     $charset = $constants::CHARSET;
+     $charset = $constants::CHARSET;*/
 
      $current_page = 'home';
 
-     try {
+/*     try {
 
           $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
           $opt = [
@@ -30,7 +30,7 @@
      catch(PDOException $e) {
           print "Error!: " . $e->getMessage() . "<br/>";
           die();
-     }
+     }*/
 
 ?>
 
