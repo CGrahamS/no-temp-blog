@@ -1,6 +1,8 @@
 <?php 
 
-/*     require_once("./Constants.php");
+     date_default_timezone_set("America/Los_Angeles");
+
+     require_once("./Constants.php");
 
      $constants = new Constants();
 
@@ -8,11 +10,11 @@
      $username = $constants::USER_NAME;
      $password = $constants::PASSWORD;
      $dbname = $constants::DB_NAME;
-     $charset = $constants::CHARSET;*/
+     $charset = $constants::CHARSET;
 
      $current_page = 'home';
 
-/*     try {
+     try {
 
           $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
           $opt = [
@@ -30,7 +32,7 @@
      catch(PDOException $e) {
           print "Error!: " . $e->getMessage() . "<br/>";
           die();
-     }*/
+     }
 
 ?>
 
@@ -50,10 +52,12 @@
                     <?php 
                          if ($stmt->rowCount() > 0) {
                               foreach ($stmt as $row) {
+                                   $date = new DateTime($row['timestamp']);
                                    echo "
                                    <div class='well'>
                                         <h3> " . $row['title'] . "</h3>
                                         <p> " . nl2br($row['body']) . "</p>
+                                        <p> Posted on " . $date->format('l, F jS') . " at " . $date->format('g:i A') . " </p>
                                    </div>
                                    ";
                               } 
